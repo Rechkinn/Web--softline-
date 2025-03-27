@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ-2. Всего одно задание</title>
+    <style>
+        td{
+            /* width: 165px; */
+        }
+    </style>
+</head>
+<body>
+    
+    <table border="1px">
+       
+        <tr >
+            <td width="165px" style="background-color: rgb(203, 223, 203);">Регистрационное имя</td>
+            <td width="370px" style="background-color: rgb(200, 200, 200);">
+                <form action="">
+                    <input type="text" name="name">
+                </form>
+            </td>
+        </tr>
+        <tr >
+            <td width="165px" style="background-color: rgb(203, 223, 203);">Пароль</td>
+            <td width="370px" style="background-color: rgb(200, 200, 200);">
+                <form action="">
+                    <input type="password" name="pass">
+                </form>
+                <form action="">
+                    <input type="password" name="pass">: подтвердите пароль
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td width="165px" style="background-color: rgb(203, 223, 203);">Ваша специализация</td>
+            <td width="370px" style="background-color: rgb(200, 200, 200);">
+                <form action="">
+                    <select name="Specialization">
+                        <option value="Web-мастер">Web-мастер</option>
+                        <option value="Разработчик игр">Разработчик игр</option>
+                    </select>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td width="165px" style="background-color: rgb(203, 223, 203);">Пол</td>
+            <td width="370px" style="background-color: rgb(200, 200, 200);">
+                <form action="">
+                    <input type="radio" name="gender" value="Web-мастер">М<br>
+                    <input type="radio" name="gender" value="Web-мастер">Ж<br>
+                    
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td width="165px" style="background-color: rgb(203, 223, 203);">Ваши навыки</td>
+            <td width="370px" style="background-color: rgb(200, 200, 200);">
+                <input type="checkbox" name="Skills" value="знание HTML и CSS">знание HTML и CSS<br>
+                <input type="checkbox" name="Skills" value="знание Perl">знание Perl<br>
+                <input type="checkbox" name="Skills" value="знание ASP">знание ASP<br>
+                <input type="checkbox" name="Skills" value="знание Adobe Photoshop">знание Adobe Photoshop<br>
+                <input type="checkbox" name="Skills" value="знание JAVA">знание JAVA<br>
+                <input type="checkbox" name="Skills" value="знание JavaScript">знание JavaScript<br>
+                <input type="checkbox" name="Skills" value="знание Flash">знание Flash<br>
+            </td>
+        </tr>
+        <tr>
+            <td width="165px" style="background-color: rgb(203, 223, 203);">Дополнительные сведения о себе</td>
+            <td width="370px" style="background-color: rgb(200, 200, 200);">
+                <form action="">
+                    <textarea name="info" cols="30" rows="4"></textarea>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <form action="">
+                    <input type="submit" value="зарегистрировать">
+                    <input type="submit" value="очистить форму">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+</body>
+</html>

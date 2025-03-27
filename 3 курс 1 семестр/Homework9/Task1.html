@@ -1,0 +1,31 @@
+<script>
+
+    let ID = 0;
+    function Product(title, price){
+        ID++;
+        this.id = ID;
+        this.title = title;
+        this.price = price;
+        this.showInfo = function() {
+            return `Продукт ${this.title} имеет стоимость ${this.price} (ID = ${this.id}) <br>`;
+        };
+    }
+
+    nameProduct = ["Яблоко", "Банан", "Манго", "Апельсин"];
+
+    products = [];
+
+    for(let i = 0; i < 30; i++) {
+        products.push(new Product(nameProduct[Math.round(Math.random() * (3 - 0) + 0)], Math.round(Math.random() * (100 - 10) + 10)));
+    }
+
+    let sum = 0;
+    for(let i = 0; i < products.length; i++) {
+        
+        document.write(products[i].showInfo());
+        sum += products[i].price;
+        
+    }
+    document.write(`Средняя стоимость товара: ${sum/products.length}`);
+</script>
+

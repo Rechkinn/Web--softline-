@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let images = ['0.jpg', '1.jpg', '2.jpg', '3.jpg', '4.jpg'];
+        startId = 0;
+        function go(nextOrPrevious) {
+            if(nextOrPrevious == 1) {
+                startId++;
+                if(startId >= images.length) {
+                    startId = 0;
+                }
+            }
+            else {
+                startId--;
+                if(startId <= -1) {
+                    startId = images.length-1;
+                }
+            }
+            
+            let image = document.querySelector('img');
+            image.src = images[startId];
+        }
+        
+    </script>
+
+</head>
+<body>
+    <div>
+        <img src="0.jpg" alt="" width="300px">
+        <button onclick="go(1)">Вперёд</button>
+        <button onclick="go(2)">Назад</button> <br>
+        
+    </div>
+    
+</body>
+</html>

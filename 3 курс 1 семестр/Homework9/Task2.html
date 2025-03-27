@@ -1,0 +1,38 @@
+<script>
+    let ID = 0;
+    function foto(title, address) {
+        
+        this.id = ID++;
+        this.title = title;
+        this.address = address;
+    }
+
+    let countFoto = prompt("Введите общее количество изображений");
+
+    let images = [];
+    for(let i = 0; i < countFoto; i++) {
+        // https://i.pinimg.com/736x/81/77/13/817713991310fb84aef8f95b42c71742.jpg // тестовое изображение
+        images.push(new foto(prompt("Введите название изображения"), prompt("Введите адрес изображения (ссылку)")));
+        // images.push(new foto(i+1, prompt("Адрес"))); // Вводим только ссылку на изображение. В виде названия будет число (номер картинки)
+    }
+    document.write(`<table>`); // открываем таблицу
+    for(let i = 0; i < images.length; i+=3) {
+        document.write(`<tr>`); // открываем строку
+        let max = 3; // max определяет максимальное количество столбцов в строке
+        if(images.length - i == 2) {
+            max = 2; 
+        } else if(images.length - i == 1) {
+            max = 1;
+        }
+        for(let j = 0; j < max; j++) {
+            document.write(`<td>${images[i+j].title}</td>`); // Создаем необходимое кол-во столбцов и заполняем их названиями изображений
+        }
+        document.write(`</tr>`); // закрываем строку
+        document.write(`<tr>`); // открываем строку
+        for(let j = 0; j < max; j++) {
+            document.write(`<td><img src="${images[i+j].address}" alt="" width=50% height=50%></td>`); // Создаем необходимое кол-во столбцов и заполняем их изображениями
+        }
+        document.write(`</tr>`); // закрываем строку
+    }
+    document.write(`</table>`); // закрываем таблицу
+</script>

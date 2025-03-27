@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function() {
+            let body = document.querySelector('body');
+
+            let div = document.querySelector('div');
+            if(!div) {
+                div = document.createElement('div');
+                body.append(div);
+            }
+            
+            let img = document.querySelector('img');
+            if(!img) {
+                img = document.createElement('img');
+                div.append(img);
+            }
+            
+            let images = ['0.jpg', '1.jpg', '2.jpg', '3.jpg', '4.jpg'];
+            img.src = images[0];
+            img.style.width = "1000px";
+            
+            startId = 0;
+            setInterval(() => {
+                startId++;
+                if(startId >= images.length) {
+                    startId = 0;
+                }
+                img.src = images[startId];
+            }, 3000)
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <img src="" alt="">
+    </div>
+</body>
+</html>

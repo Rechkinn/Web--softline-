@@ -1,0 +1,10 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: rgb(250, 244, 225);
+}
+#description{
+    text-align: left;
+}

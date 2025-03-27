@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function() {
+            let body = document.querySelector('body');
+
+            let div = document.createElement('div');
+            body.append(div);
+
+            let ul = document.createElement('ul');
+            div.append(ul);
+
+            let secondName = ['Иванов', 'Петров'];
+            for(let i = 0; i < 2; i++){
+                let li = document.createElement('li');
+                li.innerText = secondName[i];
+                ul.append(li);
+            }
+
+            let input = document.createElement('input');
+            div.append(input);
+
+            let button = document.createElement('button');
+            button.innerText = 'Добавить новую фамилию';
+            div.append(button);
+
+            button.onclick = function appendInList() {
+                if(input.value) {
+                    let new_li = document.createElement('li');
+                    new_li.innerText = input.value;
+                    ul.append(new_li);
+                }
+                else{
+                    alert('Введите фамилию!')
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

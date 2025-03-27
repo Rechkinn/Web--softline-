@@ -1,0 +1,32 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+p{
+    font-weight: bold;
+    text-align: center;
+}
+
+body{
+    max-width: 470px;
+}
+#container{
+    width: 470px;
+    margin: 0 auto;
+}
+#language{
+    padding-left: 70px;
+    width: 200px;
+    float: left;
+}
+
+#level{
+    width: 200px;
+    float: right;
+}
+#name{
+    width: 84%;
+}
+#Iname{
+    width: 91%;
+}

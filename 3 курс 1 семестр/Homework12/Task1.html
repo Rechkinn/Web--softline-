@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function() {
+            let body = document.querySelector('body'); 
+            let div = document.querySelector('div');    
+            if(!div) {
+                div = document.createElement('div');
+                body.append(div);
+            }
+            let select = document.querySelector('select');
+            if(!select) {
+                select = document.createElement('select');
+                div.append(select);
+                let optionWhite = document.createElement('option');
+                optionWhite.innerText = 'Белый';
+                let optionBlack = document.createElement('option');
+                optionBlack.innerText = 'Чёрный';
+                select.append(optionWhite);
+                select.append(optionBlack);
+            }
+
+            let input = document.createElement('input');
+            let button = document.createElement('button');
+            div.append(input);
+            div.append(button);
+
+            button.innerText = 'Добавить';
+            button.onclick = function add(){
+                
+                if(!input.value) {
+                    alert('Введите цвет!')
+                }
+                else{
+                    let flag = true;
+                    let masOption = select.querySelectorAll('option');
+                    for(let i = 0; i < masOption.length; i++){
+                        if(masOption[i].value == input.value){
+                            alert('Такой цвет уже имеется!');
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if(flag){
+                        let option = document.createElement('option');
+                        option.innerText = input.value;
+                        select.append(option);
+                    }
+                }
+            }
+            // console.log();
+        }
+        
+    </script>
+
+</head>
+<body>
+    <!-- <div>
+        <select>
+            <option>Белый</option>
+            <option>Черный</option>
+        </select> <br>
+    </div> -->
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<script>
+    let v1 = +prompt("Введите первое число");
+    let z = prompt("Введите знак операции");
+    let v2 = +prompt("Введите второе число");
+    
+    let summa = (value1, value2) => value1 + value2;
+    let raznost = (value1, value2) => value1-value2;
+    let proizvedenie = (value1, value2) => value1*value2;
+    let delenie = (value1, value2) => value1/value2;
+
+    let mathFunc = (value1, value2, func) => {
+        if(parseInt(value1) && parseInt(value2)) {
+            if(func == '+'){
+                document.write(`${v1} ${z} ${v2} = ${summa(value1, value2)}`);
+            }else if(func == '-'){
+                document.write(`${v1} ${z} ${v2} = ${raznost(value1, value2)}`);
+            }else if(func == '*'){
+                document.write(`${v1} ${z} ${v2} = ${proizvedenie(value1, value2)}`);
+            }else if(func == '/'){
+                document.write(`${v1} ${z} ${v2} = ${delenie(value1, value2)}`);
+            }else{
+                alert("Введите корректный знак операции!");
+            }
+        }else{
+            alert("Введите корректные числа!");
+        }
+    }
+
+    mathFunc(v1, v2, z);
+</script>

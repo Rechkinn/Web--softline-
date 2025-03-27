@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма приема на работу</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .form-container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        label { display: block; margin-top: 10px; }
+        input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px 15px; background-color: #28a745; color: #fff; border: none; cursor: pointer; }
+        button:disabled { background-color: #ccc; cursor: not-allowed; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        const isName = name => /^[а-яё]{3,}$/i.test(name);
+        const isEmail = email => /^[a-z0-9_-]+@[a-z0-9_-]+\.[a-z]{2,4}$/i.test(email);
+        const isPhone = phone => /^\+79\d{2}-\d{3}(-\d{2}){2}$/i.test(phone);
+        const isPosition = position => /^[а-яё]{3,20}$/i.test(position); // Мне кажется, что любая должность имеет длину от 3 до 20 символов
+
+
+// Алексей
+// aor10@tpu.ru
+// +7913-817-82-18
+// Тута
+
+        $(document).ready(() => {
+            $('button').click(()=>{
+                
+                let informationAboutHuman = [];
+
+                // Собираем данные из формы
+                let name = $('#name').val();
+                if(!isName(name)){
+                    alert('Некорректно введено имя');
+                    return;
+                }
+                
+                let email = $('#email').val();
+                if(!isEmail(email)){
+                    alert('Некорректно введен email');
+                    return;
+                }
+                
+                let phone = $('#phone').val();
+                if(!isPhone(phone)){
+                    alert('Некорректно введен номер телефона');
+                    return;
+                }
+          
+                let position = $('#position').val();
+                if(!isPosition(position)){
+                    alert('Некорректно введена желаемая должность');
+                    return;
+                }
+             
+                let resume = $('#resume').val();
+                // Проверку резюме не делал, так как в поле могут вводиться целые 
+                // предложения, а не конкретный формат данных.
+
+                const DATA = `name=${name}&email=${email}&phone=${phone}&position=${position}&resume=${resume}`;
+                
+                // Отправляем данные с помощью AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: '', // По заданию обработка сервером не требуется
+                    data: DATA,
+                    success: function(pushForm) {
+                        alert('Заявка успешно отправлена!');
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Форма приема на работу</h2>
+    <form id="applicationForm">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+79XX-XXX-XX-XX" required>
+
+        <label for="position">Желаемая должность:</label>
+        <input type="text" id="position" name="position" required>
+
+        <label for="resume">Краткое резюме:</label>
+        <textarea id="resume" name="resume" rows="4" required></textarea>
+
+        <button type="button" >Отправить</button>
+    </form>
+</div>
+
+
+
+
+</body>
+</html>

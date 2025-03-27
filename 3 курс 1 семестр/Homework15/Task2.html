@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        // В данном задании я отталкивался от следующих правил:
+        // 1) 123qwe - это строка;
+        // 2) 123 - это число.
+
+        let validationParseInt = (v) => (parseInt(v) == v) ? parseInt(v) : 0;
+
+        function sum(first, ...other) {
+            let sumValues = validationParseInt(first);
+            for(let i = 0; i < other.length; i++){
+                sumValues += validationParseInt(other[i]);
+            }
+            return sumValues;
+        }
+        
+        function calculateSum() {
+            if(document.getElementById('input1').value && document.getElementById('input2').value && document.getElementById('input3').value && document.getElementById('input4').value && document.getElementById('input5').value){
+                let p = document.querySelector('p');
+                p.innerText = ' ';
+                p.innerText = `Сумма всех введённых значений равна ${sum(document.getElementById('input1').value, document.getElementById('input2').value, document.getElementById('input3').value, document.getElementById('input4').value, document.getElementById('input5').value)}`;
+            }else{
+                alert("Введите значения в поля");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="input1"><br>
+        <input type="text" id="input2"><br>
+        <input type="text" id="input3"><br>
+        <input type="text" id="input4"><br>
+        <input type="text" id="input5"><br>
+        <button onclick="calculateSum()">Вычислить сумму</button><br>
+        <p></p>
+    </div>
+</body>
+</html>

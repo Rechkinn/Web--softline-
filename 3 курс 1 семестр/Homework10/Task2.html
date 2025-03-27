@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid blue;
+        }
+
+        .square{
+            width: 50px;
+            height: 50px;
+            z-index: 2; 
+            border: 2px solid blue;
+        }
+
+        .white {
+            background-color: white;
+        }
+
+        .black {
+            background-color: blue;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div></div>
+
+    <script>
+
+        let vertical = 10;
+        let horizontal = 10;
+
+        let figure = [
+            [" ", "a", "b","c", "d", "e","f", "g", "h"," "],
+            ["8", "&#9820", "&#9822","&#9821", "&#9819", "&#9818","&#9821", "&#9822", "&#9820","8"],
+            ["7", "&#9823", "&#9823","&#9823", "&#9823", "&#9823","&#9823", "&#9823", "&#9823","7"],
+            ["6", " ", " "," ", " ", " "," ", " ", " ","6"],
+            ["5", " ", " "," ", " ", " "," ", " ", " ","5"],
+            ["4", " ", " "," ", " ", " "," ", " ", " ","4"],
+            ["3", " ", " "," ", " ", " "," ", " ", " ","3"],
+            ["2", "&#9817", "&#9817","&#9817", "&#9817", "&#9817","&#9817", "&#9817", "&#9817","2"],
+            ["1", "&#9814", "&#9816","&#9815", "&#9813", "&#9812","&#9815", "&#9816", "&#9814","1"],
+            [" ", "a", "b","c", "d", "e","f", "g", "h"," "]
+        ]
+
+        let table = document.createElement('table');
+        for(let i = 0; i < horizontal; i++) {
+            let tr = document.createElement('tr');
+            for(let j = 0; j < vertical; j++) {
+                let td = document.createElement('td');
+                if((i > 0 && i < 9) && (j > 0 && j < 9)) {
+                    td.classList.add('square')
+                    td.classList.add((i+j)%2==0 ? 'white': 'black'); 
+                }
+                td.innerHTML = figure[i][j];
+                td.style.textAlign = 'center';
+                td.style.fontSize = '25px';
+                tr.append(td);
+            }
+            table.append(tr);
+        }
+        document.querySelector('div').append(table);
+
+    </script>
+
+</body>
+</html>

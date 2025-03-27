@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ-3</title>
+    <link rel="stylesheet" href="style-3.css">
+    
+</head>
+<body >
+    
+
+    <form action="server" method="post">
+        <fieldset><!--Группа элементов-->
+
+            <!-- <legend>Персональные данные</legend> -->
+            <p>АНКЕТА</p>
+            <p>участника конкурса на замещение вакантной должности</p>
+
+            <label for="Fname">Фамилия</label>
+            <input type="text" name="Lastname" id="name"> <br>
+
+            <label for="Iname">Имя</label>
+            <input type="text" name="Firstname" id="Iname"> <br>
+
+            <label for="Oname">Отчество</label>
+            <input type="text" name="Otname" id="name"> <br>
+            
+            <label for="datebirth">Дата рождения: </label>
+            <label for="year">год</label>
+            <input type="number" name="year" min="1924"  max="2024">
+
+            <label for="month">, месяц</label>
+            <select name="month">
+                <option value="January">январь</option>
+                <option value="February">февраль</option>
+                <option value="March">март</option>
+                <option value="April">апрель</option>
+                <option value="May">май</option>
+                <option value="June">июнь</option>
+                <option value="July">июль</option>
+                <option value="August">август</option>
+                <option value="September">сентябрь</option>
+                <option value="October">октябрь</option>
+                <option value="November">ноябрь</option>
+                <option value="December">декабрь</option>
+            </select>
+
+            <label for="year">, число</label>
+            <input type="number" name="year" min="1"  max="31"> <br>
+
+            <label for="Education">Образование</label>
+            <select name="Education">
+                <option value="-"></option>
+                <option value="noeducation">Нет образования</option>
+                <option value="secondary">Среднее</option>
+                <option value="higher">Высшее</option>
+            </select><br>
+
+            <label for="timework">Время работы по специальности</label>
+            <input size="1" type="text" name="timework1" id="number" >
+            <input type="text" name="timework2" id="word"> <br>
+
+            <label for="timework">Владею следующими иностранными языками:</label><br>
+
+            <div id="container">
+                
+                <div id="language">
+                    <input type="checkbox" name="lang1" id="eng">
+                    <label for="lang1">английским:</label>
+                    <br>
+
+                    <input type="checkbox" name="lang2" id="fra">
+                    <label for="lang2">французским:</label>
+                    <br>
+
+                    <input type="checkbox" name="lang3" id="spa">
+                    <label for="lang3">испанским:</label>
+                    <br>
+
+                    <input type="checkbox" name="lang4" id="jap">
+                    <label for="lang4">японским:</label>
+                    <br>
+
+                    <input type="checkbox" name="lang5" id="other">
+                    <input type="text" placeholder="другим (укажите, каким)">
+                    <br>
+                </div>
+                    
+                <div id="level">
+                    <select name="levelskill">
+                        <option value="-"></option>
+                        <option value="starter">Читаю со словарём</option>
+                        <option value="beginner">Владею на базовом уровне</option>
+                        <option value="advanced">Владею свободно</option>
+                        <option value="native">Носитель языка</option>
+                    </select><br>
+                    <select name="levelskill">
+                        <option value="-"></option>
+                        <option value="starter">Читаю со словарём</option>
+                        <option value="beginner">Владею на базовом уровне</option>
+                        <option value="advanced">Владею свободно</option>
+                        <option value="native">Носитель языка</option>
+                    </select><br>
+                    <select name="levelskill">
+                        <option value="-"></option>
+                        <option value="starter">Читаю со словарём</option>
+                        <option value="beginner">Владею на базовом уровне</option>
+                        <option value="advanced">Владею свободно</option>
+                        <option value="native">Носитель языка</option>
+                    </select><br>
+                    <select name="levelskill">
+                        <option value="-"></option>
+                        <option value="starter">Читаю со словарём</option>
+                        <option value="beginner">Владею на базовом уровне</option>
+                        <option value="advanced">Владею свободно</option>
+                        <option value="native">Носитель языка</option>
+                    </select><br>
+                    <select name="levelskill">
+                        <option value="-"></option>
+                        <option value="starter">Читаю со словарём</option>
+                        <option value="beginner">Владею на базовом уровне</option>
+                        <option value="advanced">Владею свободно</option>
+                        <option value="native">Носитель языка</option>
+                    </select><br>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</body>
+</html>
